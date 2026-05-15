@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp \"/Users/jaydenlee/Documents/1_강의/000-유쳐/101-워크스페이스/211_교안PPT제작프로젝트/uture-design-system/assets/\"* \"/Users/jaydenlee/Documents/1_강의/000-유쳐/101-워크스페이스/211_교안PPT제작프로젝트/results/바이브코딩_하네스엔지니어링/assets/\")",
+      "Bash(cp \"/Users/jaydenlee/Documents/1_강의/000-유쳐/101-워크스페이스/211_교안PPT제작프로젝트/uture-design-system/fonts/\"* \"/Users/jaydenlee/Documents/1_강의/000-유쳐/101-워크스페이스/211_교안PPT제작프로젝트/results/바이브코딩_하네스엔지니어링/fonts/\")",
+      "Bash(npx --yes --package=playwright@latest -- playwright --version)",
+      "Bash(npx --yes --package=playwright@latest -- playwright install chromium --only-shell)",
+      "Bash(PLAYWRIGHT_BROWSERS_PATH=/Users/jaydenlee/Library/Caches/ms-playwright node capture.mjs)"
+    ]
+  }
+}

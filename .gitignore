@@ -1,0 +1,7 @@
+# sources 폴더 내용은 GitHub에 올리지 않음
+sources/*
+!sources/.gitkeep
+
+# results 폴더 내용은 GitHub에 올리지 않음
+results/*
+!results/.gitkeep

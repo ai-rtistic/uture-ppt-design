@@ -1,0 +1,27 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"/><link rel="stylesheet" href="../colors_and_type.css"/><style>
+html,body{background:var(--ut-canvas);margin:0;}
+body{width:700px;height:460px;box-sizing:border-box;padding:32px 40px;font-family:var(--font-sans);color:var(--ut-ink);display:flex;flex-direction:column;}
+.card-label{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--ut-text-muted);margin-bottom:18px;}
+.spec-row{display:flex;align-items:baseline;gap:24px;border-top:1px solid var(--ut-line);padding:16px 0;}
+.spec-row:first-of-type{border-top:none;padding-top:0;}
+.spec-meta{font-family:var(--font-mono);font-size:11px;color:var(--ut-text-muted);min-width:120px;letter-spacing:0;}
+.spec-sample{flex:1;color:var(--ut-ink);}
+</style></head><body>
+<div class="card-label">Lead / Body · 도입문 · 본문</div>
+
+<div class="spec-row" style="align-items:flex-start;">
+  <div class="spec-meta">lead<br/>36 / 1.45 · 500</div>
+  <div class="spec-sample" style="font-size:24px;font-weight:500;letter-spacing:-0.01em;line-height:1.45;">RAG는 검색과 생성을 잇는 다리. 다리가 약하면 결과가 흔들린다.</div>
+</div>
+
+<div class="spec-row" style="align-items:flex-start;">
+  <div class="spec-meta">body<br/>30 / 1.55 · 400</div>
+  <div class="spec-sample" style="font-size:20px;font-weight:400;letter-spacing:-0.005em;line-height:1.55;color:var(--ut-text-soft);">청크가 의미 단위로 끊겨야 검색이 정확해진다. 길이 기준으로만 자르면 문맥이 두 청크에 걸친다.</div>
+</div>
+
+<div class="spec-row" style="align-items:flex-start;">
+  <div class="spec-meta">body-sm<br/>26 / 1.55 · 400</div>
+  <div class="spec-sample" style="font-size:17px;font-weight:400;line-height:1.55;color:var(--ut-text-soft);">표 셀, 카드 본문, 캡션 위 작은 본문에 사용</div>
+</div>
+
+</body></html>

@@ -1,0 +1,18 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"/><link rel="stylesheet" href="../colors_and_type.css"/><style>
+html,body{background:var(--ut-canvas);margin:0;}
+body{width:700px;height:280px;box-sizing:border-box;padding:32px 40px;font-family:var(--font-sans);color:var(--ut-ink);display:flex;flex-direction:column;}
+.card-label{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--ut-text-muted);margin-bottom:18px;}
+.swatch-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.sw{display:flex;flex-direction:column;gap:8px;}
+.sw .chip{width:100%;aspect-ratio:1/1;border-radius:8px;border:1px solid var(--ut-line);}
+.sw .name{font-family:var(--font-mono);font-size:11px;font-weight:600;color:var(--ut-ink);line-height:1.3;}
+.sw .hex{font-family:var(--font-mono);font-size:10px;color:var(--ut-text-muted);}
+</style></head><body>
+<div class="card-label">Core Palette</div>
+<div class="swatch-grid">
+  <div class="sw"><div class="chip" style="background:#ffffff;"></div><div class="name">--ut-canvas</div><div class="hex">#FFFFFF</div></div>
+  <div class="sw"><div class="chip" style="background:#201515;border-color:#201515;"></div><div class="name">--ut-ink</div><div class="hex">#201515</div></div>
+  <div class="sw"><div class="chip" style="background:#0d0707;border-color:#0d0707;"></div><div class="name">--ut-ink-strong</div><div class="hex">#0D0707</div></div>
+  <div class="sw"><div class="chip" style="background:#ff4f00;border-color:#ff4f00;"></div><div class="name">--ut-accent</div><div class="hex">#FF4F00</div></div>
+</div>
+</body></html>

@@ -1,0 +1,205 @@
+/* UTURE Design System — Color & Type Tokens
+   v1.0 · 2026-05-15
+   Pretendard 본문 / 절제된 주황 강조 / 흰 캔버스 에디토리얼 톤
+*/
+
+/* ── Fonts ──────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* Pretendard — brand-supplied TTF (fonts/) */
+@font-face { font-family: "Pretendard"; font-style: normal; font-weight: 100; font-display: swap;
+  src: url("fonts/Pretendard-Thin.ttf") format("truetype"); }
+@font-face { font-family: "Pretendard"; font-style: normal; font-weight: 200; font-display: swap;
+  src: url("fonts/Pretendard-ExtraLight.ttf") format("truetype"); }
+@font-face { font-family: "Pretendard"; font-style: normal; font-weight: 300; font-display: swap;
+  src: url("fonts/Pretendard-Light.ttf") format("truetype"); }
+@font-face { font-family: "Pretendard"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("fonts/Pretendard-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Pretendard"; font-style: normal; font-weight: 500; font-display: swap;
+  src: url("fonts/Pretendard-Medium.ttf") format("truetype"); }
+@font-face { font-family: "Pretendard"; font-style: normal; font-weight: 600; font-display: swap;
+  src: url("fonts/Pretendard-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "Pretendard"; font-style: normal; font-weight: 700; font-display: swap;
+  src: url("fonts/Pretendard-Bold.ttf") format("truetype"); }
+@font-face { font-family: "Pretendard"; font-style: normal; font-weight: 800; font-display: swap;
+  src: url("fonts/Pretendard-ExtraBold.ttf") format("truetype"); }
+@font-face { font-family: "Pretendard"; font-style: normal; font-weight: 900; font-display: swap;
+  src: url("fonts/Pretendard-Black.ttf") format("truetype"); }
+
+:root {
+  /* ── Core color palette ───────────────────────────────────── */
+  --ut-canvas:        #ffffff;
+  --ut-ink:           #201515;   /* warm black — body/title */
+  --ut-ink-strong:    #0d0707;   /* cover/section deepest */
+  --ut-accent:        #ff4f00;   /* the only accent. earn it. */
+
+  /* ── Neutral surfaces & text ──────────────────────────────── */
+  --ut-surface-1:     #fafafa;
+  --ut-surface-2:     #f5f5f3;
+  --ut-line:          #d8d5ce;
+  --ut-line-strong:   #aeaba2;
+  --ut-text-soft:     #36342e;
+  --ut-text-muted:    #77736b;
+
+  /* ── Semantic (compare / quote) ───────────────────────────── */
+  --ut-good:          #1f6b4a;
+  --ut-good-bg:       #eaf3ee;
+  --ut-bad:           #8a3a2a;
+  --ut-bad-bg:        #f4ece8;
+  --ut-info:          #2a4e8a;
+  --ut-info-bg:       #ecf0f7;
+
+  /* ── Type families ────────────────────────────────────────── */
+  --font-sans: "Pretendard", -apple-system,
+               BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR",
+               "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Pretendard", serif;  /* deprecated — Pretendard로 통일. 기존 사용장은 fallback 처리. */
+  --font-mono: "JetBrains Mono", "D2Coding", "SF Mono", ui-monospace, monospace;
+
+  /* ── Spacing (8pt) ────────────────────────────────────────── */
+  --s-1: 8px;
+  --s-2: 16px;
+  --s-3: 24px;
+  --s-4: 32px;
+  --s-5: 48px;
+  --s-6: 64px;
+  --s-7: 96px;
+  --s-8: 120px;
+
+  /* ── Radius ───────────────────────────────────────────────── */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-pill: 999px;
+
+  /* ── Canvas ───────────────────────────────────────────────── */
+  --canvas-w: 1920px;
+  --canvas-h: 1080px;
+  --safe-x: 120px;
+  --safe-y: 96px;
+}
+
+/* ── Base reset / body ────────────────────────────────────────── */
+html, body {
+  background: var(--ut-canvas);
+  color: var(--ut-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss03", "tnum";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+}
+
+/* ── Type scale utility classes (1920×1080 baseline) ──────────── */
+.t-display      { font-size: 112px; line-height: 1.05; font-weight: 700; letter-spacing: -0.03em; }
+.t-title-1      { font-size: 72px;  line-height: 1.15; font-weight: 700; letter-spacing: -0.025em; }
+.t-title-2      { font-size: 56px;  line-height: 1.2;  font-weight: 700; letter-spacing: -0.02em; }
+.t-title-3      { font-size: 40px;  line-height: 1.25; font-weight: 600; letter-spacing: -0.015em; }
+.t-lead         { font-size: 36px;  line-height: 1.45; font-weight: 500; letter-spacing: -0.01em; }
+.t-body         { font-size: 30px;  line-height: 1.55; font-weight: 400; letter-spacing: -0.005em; }
+.t-body-strong  { font-size: 30px;  line-height: 1.55; font-weight: 600; letter-spacing: -0.005em; }
+.t-body-sm      { font-size: 26px;  line-height: 1.55; font-weight: 400; }
+.t-caption      { font-size: 22px;  line-height: 1.45; font-weight: 500; color: var(--ut-text-muted); }
+.t-eyebrow      { font-size: 20px;  line-height: 1.2;  font-weight: 600; letter-spacing: -0.005em; color: var(--ut-text-soft); }
+.t-code         { font-family: var(--font-mono); font-size: 26px; line-height: 1.5; font-weight: 500; }
+
+/* ── Semantic elements ────────────────────────────────────────── */
+h1 { font-size: 72px; line-height: 1.15; font-weight: 700; letter-spacing: -0.025em; margin: 0 0 var(--s-5); color: var(--ut-ink-strong); }
+h2 { font-size: 56px; line-height: 1.2;  font-weight: 700; letter-spacing: -0.02em;  margin: 0 0 var(--s-4); color: var(--ut-ink); }
+h3 { font-size: 40px; line-height: 1.25; font-weight: 600; letter-spacing: -0.015em; margin: 0 0 var(--s-3); color: var(--ut-ink); }
+h4 { font-size: 32px; line-height: 1.35; font-weight: 600; letter-spacing: -0.01em;  margin: 0 0 var(--s-3); color: var(--ut-ink); }
+p  { font-size: 30px; line-height: 1.55; font-weight: 400; margin: 0 0 var(--s-3); color: var(--ut-ink); max-width: 70ch; }
+
+code, kbd, samp, pre {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+code:not(pre code) {
+  background: var(--ut-surface-2);
+  padding: 2px 8px;
+  border-radius: var(--r-sm);
+}
+pre {
+  background: var(--ut-surface-2);
+  padding: var(--s-3);
+  border-radius: var(--r-md);
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--ut-line);
+  margin: var(--s-5) 0;
+}
+
+a { color: var(--ut-accent); text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+
+/* ── Component primitives ─────────────────────────────────────── */
+
+/* Eyebrow (chapter label, top-left of every body slide) — mono number + hairline + sentence-case title */
+.ut-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 15px;
+  line-height: 1;
+}
+.ut-eyebrow .num {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--ut-ink);
+  font-variant-numeric: tabular-nums;
+}
+.ut-eyebrow .sep {
+  width: 1px;
+  height: 13px;
+  background: var(--ut-line-strong);
+  display: inline-block;
+}
+.ut-eyebrow .title {
+  font-weight: 500;
+  color: var(--ut-text-soft);
+  letter-spacing: -0.005em;
+}
+
+/* Key Term Pill */
+.ut-pill {
+  display: inline-block;
+  padding: 6px 14px;
+  border: 1.5px solid var(--ut-accent);
+  border-radius: var(--r-pill);
+  color: var(--ut-accent);
+  font-weight: 600;
+  font-size: 0.95em;
+  background: var(--ut-canvas);
+}
+
+/* Callout */
+.ut-callout {
+  border-left: 6px solid var(--ut-accent);
+  padding: 4px 0 4px var(--s-3);
+}
+.ut-callout--bad  { border-left-color: var(--ut-bad); }
+.ut-callout--good { border-left-color: var(--ut-good); }
+
+/* Comparison card */
+.ut-card {
+  background: var(--ut-canvas);
+  border: 1px solid var(--ut-line);
+  border-radius: var(--r-md);
+  padding: var(--s-4);
+}
+
+/* Page marker */
+.ut-page-marker {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ut-text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* Accent helpers */
+.ut-accent { color: var(--ut-accent); }
+.ut-muted  { color: var(--ut-text-muted); }
+.ut-soft   { color: var(--ut-text-soft); }

@@ -1,0 +1,55 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"/><link rel="stylesheet" href="../colors_and_type.css"/><style>
+html,body{background:var(--ut-canvas);margin:0;}
+body{width:700px;height:440px;box-sizing:border-box;padding:32px 40px;font-family:var(--font-sans);color:var(--ut-ink);display:flex;flex-direction:column;gap:18px;}
+.card-label{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--ut-text-muted);margin-bottom:6px;}
+.variant-label{font-family:var(--font-mono);font-size:11px;color:var(--ut-text-muted);margin-bottom:8px;}
+.slide-mock{
+  border:1px solid var(--ut-line);
+  border-radius:12px;
+  background:var(--ut-canvas);
+  position:relative;
+  padding:14px 18px;
+  display:flex;flex-direction:column;
+  height:130px;
+}
+.slide-mock .stub{font-family:var(--font-mono);font-size:10px;color:var(--ut-text-muted);}
+.slide-mock .placeholder{flex:1;display:flex;align-items:center;justify-content:center;color:var(--ut-line-strong);font-size:11px;letter-spacing:0.04em;}
+.full-footer{
+  position:absolute;left:18px;right:18px;bottom:6px;
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:9px;color:var(--ut-text-muted);font-weight:500;font-variant-numeric:tabular-nums;
+}
+.page-num-only{
+  position:absolute;right:18px;bottom:6px;
+  font-size:9px;color:var(--ut-text-muted);font-weight:500;font-variant-numeric:tabular-nums;
+}
+</style></head><body>
+
+<div class="card-label">Page Marker · 두 가지 변형 (둘 다 작게, 슬라이드 끝)</div>
+
+<!-- A: full footer (cover/section/statement/closing) -->
+<div>
+  <div class="variant-label">A · 표지 / 섹션 / Statement / Closing — 풀 푸터 (copyright + 번호)</div>
+  <div class="slide-mock">
+    <div class="stub">RAG는 정말 죽었는가 (제목·여백 위주 슬라이드)</div>
+    <div class="placeholder">대제목 · 여백</div>
+    <div class="full-footer">
+      <span>Copyright © 2026 uture(유쳐) by 아이솔. All rights reserved.</span>
+      <span>14 / 36</span>
+    </div>
+  </div>
+</div>
+
+<!-- B: page number only (body pages) -->
+<div>
+  <div class="variant-label">B · 본문 페이지 — 번호만</div>
+  <div class="slide-mock">
+    <div class="stub">04 ｜ 임베딩의 직관</div>
+    <div class="placeholder">본문 · 다이어그램</div>
+    <div class="page-num-only">14 / 36</div>
+  </div>
+</div>
+
+<div style="font-size:11px;font-family:var(--font-mono);color:var(--ut-text-muted);line-height:1.5;">캔버스 1920×1080 기준: 둘 다 font-size 22 · bottom 48px (슬라이드 끝선)</div>
+
+</body></html>

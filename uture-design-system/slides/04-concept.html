@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>Concept · Embedding</title>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html, body { margin: 0; background: #1a1a1a; overflow: hidden; }
+  .stage { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; }
+  .slide {
+    width: 1920px; height: 1080px;
+    background: var(--ut-canvas);
+    position: relative;
+    flex-shrink: 0;
+    transform-origin: center;
+  }
+  .slide.dark { background: var(--ut-ink-strong); color: #fff; }
+
+  /* Common anchors */
+  .eyebrow {
+    position: absolute; top: 96px; left: 120px;
+    display: inline-flex; align-items: center; gap: 18px;
+    font-size:32px; line-height: 1;
+  }
+  .eyebrow .num {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    color: var(--ut-ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .eyebrow .sep {
+    width: 1px; height: 20px;
+    background: var(--ut-line-strong);
+  }
+  .eyebrow .title {
+    font-weight: 500;
+    color: var(--ut-text-soft);
+    letter-spacing: -0.005em;
+  }
+  .page-marker {
+    position: absolute; bottom: 48px; left: 120px; right: 120px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 22px; font-weight: 500;
+    color: var(--ut-text-muted);
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  .page-num {
+    position: absolute; bottom: 48px; right: 120px;
+    font-size: 22px; font-weight: 500;
+    color: var(--ut-text-muted);
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  </style>
+<script>
+  // Auto-scale slide to fit viewport
+  function fit() {
+    const s = document.querySelector('.slide');
+    if (!s) return;
+    const sx = window.innerWidth / 1920;
+    const sy = window.innerHeight / 1080;
+    const k = Math.min(sx, sy);
+    s.style.transform = 'scale(' + k + ')';
+  }
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+</script>
+</head>
+<body><div class="stage">
+<div class="slide">
+  <div class="eyebrow"><span class="num">04</span><span class="sep"></span><span class="title">임베딩의 직관</span></div>
+  <div style="position:absolute;left:120px;top:280px;width:780px;">
+    <div style="font-size:64px;font-weight:700;letter-spacing:-0.02em;line-height:1.15;color:var(--ut-ink);margin-bottom:32px;">
+      임베딩
+    </div>
+    <div style="font-size:32px;font-weight:500;letter-spacing:-0.01em;line-height:1.45;color:var(--ut-text-soft);margin-bottom:40px;">
+      텍스트를 <span style="color:var(--ut-accent);font-weight:600;">숫자 위치</span>로 바꾸는 일.
+      비슷한 의미는 가까운 위치에 모인다.
+    </div>
+    <div style="display:inline-block;padding:10px 22px;border:1.5px solid var(--ut-accent);border-radius:999px;color:var(--ut-accent);font-weight:600;font-size:32px;">Embedding</div>
+  </div>
+
+  <!-- Right: simple 2D point map -->
+  <div style="position:absolute;right:120px;top:280px;width:760px;height:560px;border:1px solid var(--ut-line);border-radius:12px;background:var(--ut-canvas);">
+    <svg viewBox="0 0 760 560" width="760" height="560" style="display:block;">
+      <!-- axes -->
+      <line x1="60" y1="500" x2="720" y2="500" stroke="#d8d5ce" stroke-width="1"/>
+      <line x1="60" y1="60" x2="60" y2="500" stroke="#d8d5ce" stroke-width="1"/>
+      <text x="60" y="540" font-family="JetBrains Mono" font-size="14" fill="#77736b">의미축 X</text>
+      <text x="20" y="60" font-family="JetBrains Mono" font-size="14" fill="#77736b">Y</text>
+      <!-- cluster A (animals) -->
+      <circle cx="220" cy="160" r="7" fill="#201515"/>
+      <text x="232" y="164" font-family="Pretendard" font-size="18" fill="#201515">강아지</text>
+      <circle cx="180" cy="220" r="7" fill="#201515"/>
+      <text x="192" y="224" font-family="Pretendard" font-size="18" fill="#201515">고양이</text>
+      <circle cx="260" cy="200" r="7" fill="#201515"/>
+      <text x="272" y="204" font-family="Pretendard" font-size="18" fill="#201515">햄스터</text>
+      <!-- cluster B (tools) -->
+      <circle cx="520" cy="380" r="7" fill="#201515"/>
+      <text x="532" y="384" font-family="Pretendard" font-size="18" fill="#201515">망치</text>
+      <circle cx="580" cy="340" r="7" fill="#201515"/>
+      <text x="592" y="344" font-family="Pretendard" font-size="18" fill="#201515">드라이버</text>
+      <!-- highlighted query -->
+      <circle cx="200" cy="180" r="11" fill="#ff4f00"/>
+      <text x="216" y="184" font-family="Pretendard" font-size="20" fill="#ff4f00" font-weight="600">"애완동물"</text>
+    </svg>
+  </div>
+
+  <div class="page-num">12 / 36</div>
+</div>
+</div></body></html>

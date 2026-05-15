@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>Flow Diagram</title>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html, body { margin: 0; background: #1a1a1a; overflow: hidden; }
+  .stage { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; }
+  .slide {
+    width: 1920px; height: 1080px;
+    background: var(--ut-canvas);
+    position: relative;
+    flex-shrink: 0;
+    transform-origin: center;
+  }
+  .slide.dark { background: var(--ut-ink-strong); color: #fff; }
+
+  /* Common anchors */
+  .eyebrow {
+    position: absolute; top: 96px; left: 120px;
+    display: inline-flex; align-items: center; gap: 18px;
+    font-size:32px; line-height: 1;
+  }
+  .eyebrow .num {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    color: var(--ut-ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .eyebrow .sep {
+    width: 1px; height: 20px;
+    background: var(--ut-line-strong);
+  }
+  .eyebrow .title {
+    font-weight: 500;
+    color: var(--ut-text-soft);
+    letter-spacing: -0.005em;
+  }
+  .page-marker {
+    position: absolute; bottom: 48px; left: 120px; right: 120px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 22px; font-weight: 500;
+    color: var(--ut-text-muted);
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  .page-num {
+    position: absolute; bottom: 48px; right: 120px;
+    font-size: 22px; font-weight: 500;
+    color: var(--ut-text-muted);
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  </style>
+<script>
+  // Auto-scale slide to fit viewport
+  function fit() {
+    const s = document.querySelector('.slide');
+    if (!s) return;
+    const sx = window.innerWidth / 1920;
+    const sy = window.innerHeight / 1080;
+    const k = Math.min(sx, sy);
+    s.style.transform = 'scale(' + k + ')';
+  }
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+</script>
+</head>
+<body><div class="stage">
+<div class="slide">
+  <div class="eyebrow"><span class="num">06</span><span class="sep"></span><span class="title">RAG 파이프라인</span></div>
+  <div style="position:absolute;left:120px;top:200px;">
+    <div style="font-size:64px;font-weight:700;letter-spacing:-0.02em;line-height:1.15;color:var(--ut-ink);margin-bottom:80px;">
+      질문 → 검색 → 답변
+    </div>
+  </div>
+
+  <div style="position:absolute;left:120px;top:480px;right:120px;display:flex;align-items:center;justify-content:space-between;">
+    
+      <div style="display:flex;align-items:center;gap:24px;">
+        <div style="width:240px;height:160px;background:#fff;border:1.5px solid var(--ut-line);border-radius:12px;padding:24px 28px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="font-size:36px;font-weight:700;letter-spacing:-0.015em;color:var(--ut-ink);margin-bottom:10px;">질문</div>
+          <div style="font-size:24px;color:var(--ut-text-muted);line-height:1.4;">자연어 입력</div>
+        </div>
+        
+          <svg width="44" height="20"><path d="M0 10 L36 10 M30 4 L40 10 L30 16" stroke="#201515" stroke-width="1.5" fill="none"/></svg>
+        
+      </div>
+    
+      <div style="display:flex;align-items:center;gap:24px;">
+        <div style="width:240px;height:160px;background:#fff;border:1.5px solid var(--ut-line);border-radius:12px;padding:24px 28px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="font-size:36px;font-weight:700;letter-spacing:-0.015em;color:var(--ut-ink);margin-bottom:10px;">벡터화</div>
+          <div style="font-size:24px;color:var(--ut-text-muted);line-height:1.4;">임베딩 변환</div>
+        </div>
+        
+          <svg width="44" height="20"><path d="M0 10 L36 10 M30 4 L40 10 L30 16" stroke="#201515" stroke-width="1.5" fill="none"/></svg>
+        
+      </div>
+    
+      <div style="display:flex;align-items:center;gap:24px;">
+        <div style="width:240px;height:160px;background:#fff;border:1.5px solid var(--ut-accent);border-radius:12px;padding:24px 28px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="font-size:36px;font-weight:700;letter-spacing:-0.015em;color:var(--ut-accent);margin-bottom:10px;">검색</div>
+          <div style="font-size:24px;color:var(--ut-text-muted);line-height:1.4;">Top-k 문서</div>
+        </div>
+        
+          <svg width="44" height="20"><path d="M0 10 L36 10 M30 4 L40 10 L30 16" stroke="#201515" stroke-width="1.5" fill="none"/></svg>
+        
+      </div>
+    
+      <div style="display:flex;align-items:center;gap:24px;">
+        <div style="width:240px;height:160px;background:#fff;border:1.5px solid var(--ut-line);border-radius:12px;padding:24px 28px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="font-size:36px;font-weight:700;letter-spacing:-0.015em;color:var(--ut-ink);margin-bottom:10px;">조립</div>
+          <div style="font-size:24px;color:var(--ut-text-muted);line-height:1.4;">컨텍스트 구성</div>
+        </div>
+        
+          <svg width="44" height="20"><path d="M0 10 L36 10 M30 4 L40 10 L30 16" stroke="#201515" stroke-width="1.5" fill="none"/></svg>
+        
+      </div>
+    
+      <div style="display:flex;align-items:center;gap:24px;">
+        <div style="width:240px;height:160px;background:#fff;border:1.5px solid var(--ut-line);border-radius:12px;padding:24px 28px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="font-size:36px;font-weight:700;letter-spacing:-0.015em;color:var(--ut-ink);margin-bottom:10px;">생성</div>
+          <div style="font-size:24px;color:var(--ut-text-muted);line-height:1.4;">답변 출력</div>
+        </div>
+        
+      </div>
+    
+  </div>
+
+  <div style="position:absolute;left:120px;top:760px;font-size:30px;color:var(--ut-text-soft);max-width:1200px;">
+    검색 단계의 품질이 전체 결과를 지배한다. <span style="color:var(--ut-accent);font-weight:600;">"검색"</span>이 약하면 뒤 단계가 의미를 잃는다.
+  </div>
+<div class="page-num">18 / 36</div>
+</div>
+</div></body></html>

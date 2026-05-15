@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>Step List</title>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html, body { margin: 0; background: #1a1a1a; overflow: hidden; }
+  .stage { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; }
+  .slide {
+    width: 1920px; height: 1080px;
+    background: var(--ut-canvas);
+    position: relative;
+    flex-shrink: 0;
+    transform-origin: center;
+  }
+  .slide.dark { background: var(--ut-ink-strong); color: #fff; }
+
+  /* Common anchors */
+  .eyebrow {
+    position: absolute; top: 96px; left: 120px;
+    display: inline-flex; align-items: center; gap: 18px;
+    font-size:32px; line-height: 1;
+  }
+  .eyebrow .num {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    color: var(--ut-ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .eyebrow .sep {
+    width: 1px; height: 20px;
+    background: var(--ut-line-strong);
+  }
+  .eyebrow .title {
+    font-weight: 500;
+    color: var(--ut-text-soft);
+    letter-spacing: -0.005em;
+  }
+  .page-marker {
+    position: absolute; bottom: 48px; left: 120px; right: 120px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 22px; font-weight: 500;
+    color: var(--ut-text-muted);
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  .page-num {
+    position: absolute; bottom: 48px; right: 120px;
+    font-size: 22px; font-weight: 500;
+    color: var(--ut-text-muted);
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  </style>
+<script>
+  // Auto-scale slide to fit viewport
+  function fit() {
+    const s = document.querySelector('.slide');
+    if (!s) return;
+    const sx = window.innerWidth / 1920;
+    const sy = window.innerHeight / 1080;
+    const k = Math.min(sx, sy);
+    s.style.transform = 'scale(' + k + ')';
+  }
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+</script>
+</head>
+<body><div class="stage">
+<div class="slide">
+  <div class="eyebrow"><span class="num">07</span><span class="sep"></span><span class="title">청킹 전략 만들기</span></div>
+  <div style="position:absolute;left:120px;top:200px;">
+    <div style="font-size:64px;font-weight:700;letter-spacing:-0.02em;line-height:1.15;color:var(--ut-ink);">
+      좋은 청크를 만드는 네 단계
+    </div>
+  </div>
+
+  <div style="position:absolute;left:120px;top:420px;right:120px;display:grid;grid-template-columns:repeat(4,1fr);gap:48px;">
+    
+      <div>
+        <div style="font-size:96px;font-weight:700;color:var(--ut-accent);line-height:1;letter-spacing:-0.04em;">01</div>
+        <div style="height:4px;width:48px;background:var(--ut-accent);margin:16px 0 24px;"></div>
+        <div style="font-size:32px;font-weight:600;line-height:1.25;letter-spacing:-0.015em;color:var(--ut-ink);margin-bottom:16px;">경계 정하기</div>
+        <div style="font-size:28px;line-height:1.55;color:var(--ut-text-soft);">단락·헤더·코드 블록 같은 자연 경계를 찾는다</div>
+      </div>
+    
+      <div>
+        <div style="font-size:96px;font-weight:700;color:var(--ut-accent);line-height:1;letter-spacing:-0.04em;">02</div>
+        <div style="height:4px;width:48px;background:var(--ut-accent);margin:16px 0 24px;"></div>
+        <div style="font-size:32px;font-weight:600;line-height:1.25;letter-spacing:-0.015em;color:var(--ut-ink);margin-bottom:16px;">크기 잡기</div>
+        <div style="font-size:28px;line-height:1.55;color:var(--ut-text-soft);">보통 300–800자. 모델 토큰 한도 1/4 이하</div>
+      </div>
+    
+      <div>
+        <div style="font-size:96px;font-weight:700;color:var(--ut-accent);line-height:1;letter-spacing:-0.04em;">03</div>
+        <div style="height:4px;width:48px;background:var(--ut-accent);margin:16px 0 24px;"></div>
+        <div style="font-size:32px;font-weight:600;line-height:1.25;letter-spacing:-0.015em;color:var(--ut-ink);margin-bottom:16px;">오버랩 두기</div>
+        <div style="font-size:28px;line-height:1.55;color:var(--ut-text-soft);">50–80자를 다음 청크와 겹쳐 문맥 손실 방지</div>
+      </div>
+    
+      <div>
+        <div style="font-size:96px;font-weight:700;color:var(--ut-accent);line-height:1;letter-spacing:-0.04em;">04</div>
+        <div style="height:4px;width:48px;background:var(--ut-accent);margin:16px 0 24px;"></div>
+        <div style="font-size:32px;font-weight:600;line-height:1.25;letter-spacing:-0.015em;color:var(--ut-ink);margin-bottom:16px;">메타 붙이기</div>
+        <div style="font-size:28px;line-height:1.55;color:var(--ut-text-soft);">문서명·섹션·작성일을 청크와 함께 저장</div>
+      </div>
+    
+  </div>
+<div class="page-num">22 / 36</div>
+</div>
+</div></body></html>

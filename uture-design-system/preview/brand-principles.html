@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html, body { background: var(--ut-canvas); margin: 0; }
+  body {
+    width: 700px; height: 560px;
+    box-sizing: border-box;
+    padding: 32px 40px;
+    font-family: var(--font-sans);
+    color: var(--ut-ink);
+    display: flex; flex-direction: column;
+  }
+  .card-label {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ut-text-muted);
+    margin-bottom: 18px;
+  }
+  .row {
+    display: grid;
+    grid-template-columns: 40px 120px 1fr;
+    align-items: center;
+    column-gap: 24px;
+    padding: 14px 0;
+    border-top: 1px solid var(--ut-line);
+  }
+  .row:first-of-type { border-top: 0; }
+  .num {
+    font-family: var(--font-mono); font-weight: 600;
+    font-size: 14px; color: var(--ut-ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .viz {
+    width: 120px; height: 70px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .title {
+    font-size: 17px; font-weight: 600; letter-spacing: -0.01em;
+    color: var(--ut-ink); line-height: 1.25;
+    margin-bottom: 4px;
+  }
+  .desc {
+    font-size: 13px; line-height: 1.5; color: var(--ut-text-soft);
+  }
+</style>
+</head>
+<body>
+<div class="card-label">Brand Principles · 다섯 가지 원칙</div>
+
+<!-- 01 · 여백 — empty page with a single tiny mark -->
+<div class="row">
+  <div class="num">01</div>
+  <div class="viz">
+    <svg viewBox="0 0 120 70" width="120" height="70">
+      <rect x="6" y="6" width="108" height="58" rx="4" fill="none" stroke="#d8d5ce" stroke-width="1"/>
+      <line x1="22" y1="22" x2="62" y2="22" stroke="#201515" stroke-width="2"/>
+      <line x1="22" y1="32" x2="48" y2="32" stroke="#aeaba2" stroke-width="1"/>
+    </svg>
+  </div>
+  <div>
+    <div class="title">여백이 디자인이다</div>
+    <div class="desc">슬라이드의 60% 이상이 비어 있어도 괜찮다. 채우려고 장식하지 않는다.</div>
+  </div>
+</div>
+
+<!-- 02 · One concept, can span multiple slides -->
+<div class="row">
+  <div class="num">02</div>
+  <div class="viz">
+    <svg viewBox="0 0 120 70" width="120" height="70">
+      <rect x="4" y="14" width="32" height="42" rx="3" fill="none" stroke="#d8d5ce" stroke-width="1"/>
+      <rect x="44" y="14" width="32" height="42" rx="3" fill="none" stroke="#d8d5ce" stroke-width="1"/>
+      <rect x="84" y="14" width="32" height="42" rx="3" fill="none" stroke="#d8d5ce" stroke-width="1"/>
+      <line x1="36" y1="35" x2="44" y2="35" stroke="#201515" stroke-width="1.5"/>
+      <line x1="76" y1="35" x2="84" y2="35" stroke="#201515" stroke-width="1.5"/>
+      <circle cx="20" cy="35" r="3" fill="#ff4f00"/>
+      <line x1="50" y1="26" x2="70" y2="26" stroke="#aeaba2" stroke-width="1"/>
+      <line x1="50" y1="34" x2="64" y2="34" stroke="#aeaba2" stroke-width="1"/>
+      <line x1="90" y1="26" x2="110" y2="26" stroke="#aeaba2" stroke-width="1"/>
+    </svg>
+  </div>
+  <div>
+    <div class="title">한 개념, 필요하면 여러 장</div>
+    <div class="desc">한 슬라이드 한 메시지. 단, 복잡한 개념은 여러 슬라이드에 펼쳐도 된다.</div>
+  </div>
+</div>
+
+<!-- 03 · Typography + visual aids work together -->
+<div class="row">
+  <div class="num">03</div>
+  <div class="viz">
+    <svg viewBox="0 0 120 70" width="120" height="70">
+      <!-- Aa block -->
+      <text x="10" y="48" font-family="Pretendard" font-size="36" font-weight="700" fill="#201515" letter-spacing="-0.025em">Aa</text>
+      <line x1="58" y1="14" x2="58" y2="56" stroke="#aeaba2" stroke-width="1"/>
+      <!-- mini bar chart -->
+      <rect x="66" y="42" width="8" height="16" fill="#201515"/>
+      <rect x="78" y="30" width="8" height="28" fill="#201515"/>
+      <rect x="90" y="22" width="8" height="36" fill="#ff4f00"/>
+      <rect x="102" y="34" width="8" height="24" fill="#201515"/>
+    </svg>
+  </div>
+  <div>
+    <div class="title">타이포 + 시각 요소를 함께</div>
+    <div class="desc">표, 다이어그램, 그림을 내용에 맞게 적극 활용한다. 타이포는 기반, 시각 요소는 설명.</div>
+  </div>
+</div>
+
+<!-- 04 · Orange is an event — single accent in a row of neutrals -->
+<div class="row">
+  <div class="num">04</div>
+  <div class="viz">
+    <svg viewBox="0 0 120 70" width="120" height="70">
+      <circle cx="12" cy="35" r="3.5" fill="#d8d5ce"/>
+      <circle cx="24" cy="35" r="3.5" fill="#d8d5ce"/>
+      <circle cx="36" cy="35" r="3.5" fill="#d8d5ce"/>
+      <circle cx="48" cy="35" r="3.5" fill="#d8d5ce"/>
+      <circle cx="60" cy="35" r="5" fill="#ff4f00"/>
+      <circle cx="72" cy="35" r="3.5" fill="#d8d5ce"/>
+      <circle cx="84" cy="35" r="3.5" fill="#d8d5ce"/>
+      <circle cx="96" cy="35" r="3.5" fill="#d8d5ce"/>
+      <circle cx="108" cy="35" r="3.5" fill="#d8d5ce"/>
+    </svg>
+  </div>
+  <div>
+    <div class="title"><span style="color:var(--ut-accent);">주황색</span>은 사건이다</div>
+    <div class="desc">강조해야 할 진짜 이유가 있을 때만 쓴다. 슬라이드당 1–2회로 제한.</div>
+  </div>
+</div>
+
+<!-- 05 · Diagram replaces explanation, not decorates -->
+<div class="row">
+  <div class="num">05</div>
+  <div class="viz">
+    <svg viewBox="0 0 120 70" width="120" height="70">
+      <!-- text lines on left (collapsed) -->
+      <line x1="6" y1="18" x2="44" y2="18" stroke="#d8d5ce" stroke-width="2"/>
+      <line x1="6" y1="28" x2="40" y2="28" stroke="#d8d5ce" stroke-width="2"/>
+      <line x1="6" y1="38" x2="42" y2="38" stroke="#d8d5ce" stroke-width="2"/>
+      <line x1="6" y1="48" x2="36" y2="48" stroke="#d8d5ce" stroke-width="2"/>
+      <!-- arrow -->
+      <path d="M52 35 L66 35 M62 31 L68 35 L62 39" stroke="#201515" stroke-width="1.5" fill="none"/>
+      <!-- diagram on right -->
+      <rect x="74" y="22" width="18" height="26" rx="2" fill="none" stroke="#201515" stroke-width="1.5"/>
+      <path d="M92 35 L100 35 M97 32 L101 35 L97 38" stroke="#201515" stroke-width="1.5" fill="none"/>
+      <rect x="102" y="22" width="14" height="26" rx="2" fill="none" stroke="#ff4f00" stroke-width="1.5"/>
+    </svg>
+  </div>
+  <div>
+    <div class="title">다이어그램은 설명을 대신할 때만</div>
+    <div class="desc">텍스트로 충분하면 도형을 추가하지 않는다. 도형은 장식이 아니라 환원이다.</div>
+  </div>
+</div>
+
+</body>
+</html>

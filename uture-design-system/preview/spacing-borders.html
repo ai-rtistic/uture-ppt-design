@@ -1,0 +1,24 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"/><link rel="stylesheet" href="../colors_and_type.css"/><style>
+html,body{background:var(--ut-canvas);margin:0;}
+body{width:700px;height:300px;box-sizing:border-box;padding:32px 40px;font-family:var(--font-sans);color:var(--ut-ink);display:flex;flex-direction:column;}
+.card-label{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--ut-text-muted);margin-bottom:18px;}
+</style></head><body>
+<div class="card-label">Border System · 깊이는 보더로</div>
+<div style="display:flex;gap:24px;">
+  <div style="flex:1;display:flex;flex-direction:column;gap:10px;">
+    <div style="width:100%;height:64px;background:var(--ut-canvas);border:1px solid var(--ut-line);border-radius:8px;"></div>
+    <div style="font-family:var(--font-mono);font-size:11px;color:var(--ut-text-muted);">1px · --ut-line · 기본</div>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;gap:10px;">
+    <div style="width:100%;height:64px;background:var(--ut-canvas);border:1.5px solid var(--ut-ink);border-radius:8px;"></div>
+    <div style="font-family:var(--font-mono);font-size:11px;color:var(--ut-text-muted);">1.5px · --ut-ink · 강조</div>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;gap:10px;">
+    <div style="width:100%;height:64px;background:var(--ut-canvas);border:1.5px solid var(--ut-accent);border-radius:8px;"></div>
+    <div style="font-family:var(--font-mono);font-size:11px;color:var(--ut-text-muted);">1.5px · --ut-accent · 단 1개</div>
+  </div>
+</div>
+<div style="margin-top:24px;padding:14px 18px;background:var(--ut-surface-2);border-radius:8px;font-size:13px;color:var(--ut-text-soft);">
+  <b>Shadows:</b> 사용하지 않음. 깊이는 보더 + 배경 톤 차이로 만든다.
+</div>
+</body></html>

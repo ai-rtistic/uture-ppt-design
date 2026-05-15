@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>Closing</title>
+<link rel="stylesheet" href="../colors_and_type.css"/>
+<style>
+  html, body { margin: 0; background: #1a1a1a; overflow: hidden; }
+  .stage { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; }
+  .slide {
+    width: 1920px; height: 1080px;
+    background: var(--ut-canvas);
+    position: relative;
+    flex-shrink: 0;
+    transform-origin: center;
+  }
+  .slide.dark { background: var(--ut-ink-strong); color: #fff; }
+
+  /* Common anchors */
+  .eyebrow {
+    position: absolute; top: 96px; left: 120px;
+    display: inline-flex; align-items: center; gap: 18px;
+    font-size:32px; line-height: 1;
+  }
+  .eyebrow .num {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    color: var(--ut-ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .eyebrow .sep {
+    width: 1px; height: 20px;
+    background: var(--ut-line-strong);
+  }
+  .eyebrow .title {
+    font-weight: 500;
+    color: var(--ut-text-soft);
+    letter-spacing: -0.005em;
+  }
+  .page-marker {
+    position: absolute; bottom: 48px; left: 120px; right: 120px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 22px; font-weight: 500;
+    color: var(--ut-text-muted);
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  </style>
+<script>
+  // Auto-scale slide to fit viewport
+  function fit() {
+    const s = document.querySelector('.slide');
+    if (!s) return;
+    const sx = window.innerWidth / 1920;
+    const sy = window.innerHeight / 1080;
+    const k = Math.min(sx, sy);
+    s.style.transform = 'scale(' + k + ')';
+  }
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+</script>
+</head>
+<body><div class="stage">
+<div class="slide">
+  <div class="eyebrow"><span class="num">14</span><span class="sep"></span><span class="title">마무리</span></div>
+
+  <div style="position:absolute;top:96px;right:120px;">
+    <img src="../assets/uture_logo.png" style="width:72px;height:72px;display:block;object-fit:contain;" alt="UTURE 브랜드 마크"/>
+  </div>
+
+  <div style="position:absolute;left:120px;top:300px;max-width:1200px;">
+    <div style="font-size:88px;font-weight:700;letter-spacing:-0.025em;line-height:1.1;color:var(--ut-ink-strong);margin-bottom:48px;">
+      검색의 품질이<br/>답변의 천장을 만든다
+    </div>
+    <div style="border-left:6px solid var(--ut-accent);padding:8px 0 8px 28px;max-width:1000px;">
+      <div style="font-size:30px;font-weight:500;line-height:1.5;color:var(--ut-ink);">
+        다음 회차에서는 검색 단계를 한 칸 더 깊게.<br/>
+        BM25 · Dense · Hybrid의 차이를 정리한다.
+      </div>
+    </div>
+  </div>
+
+  <div style="position:absolute;left:120px;bottom:200px;display:flex;gap:64px;align-items:baseline;">
+    <div>
+      <div style="font-size:22px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--ut-text-muted);margin-bottom:8px;">다음 회차</div>
+      <div style="font-size:32px;font-weight:600;color:var(--ut-ink);">2회차 · 검색 단계 깊이 보기</div>
+    </div>
+    <div>
+      <div style="font-size:22px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--ut-text-muted);margin-bottom:8px;">참고</div>
+      <div style="font-size:32px;font-weight:600;color:var(--ut-ink);">UTURE 강의자료 RAG-01</div>
+    </div>
+  </div>
+<div class="page-marker"><span>Copyright © 2026 uture(유쳐) by 아이솔. All rights reserved.</span><span>36 / 36</span></div>
+</div>
+</div></body></html>

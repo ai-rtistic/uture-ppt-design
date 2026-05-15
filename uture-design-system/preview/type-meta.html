@@ -1,0 +1,44 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"/><link rel="stylesheet" href="../colors_and_type.css"/><style>
+html,body{background:var(--ut-canvas);margin:0;}
+body{width:700px;height:460px;box-sizing:border-box;padding:32px 40px;font-family:var(--font-sans);color:var(--ut-ink);display:flex;flex-direction:column;}
+.card-label{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--ut-text-muted);margin-bottom:18px;}
+.spec-row{display:flex;align-items:baseline;gap:24px;border-top:1px solid var(--ut-line);padding:16px 0;}
+.spec-row:first-of-type{border-top:none;padding-top:0;}
+.spec-meta{font-family:var(--font-mono);font-size:11px;color:var(--ut-text-muted);min-width:120px;letter-spacing:0;}
+.spec-sample{flex:1;color:var(--ut-ink);}
+
+.eb{display:inline-flex;align-items:center;gap:14px;line-height:1;}
+.eb .num{font-family:var(--font-mono);font-weight:600;color:var(--ut-ink);font-variant-numeric:tabular-nums;}
+.eb .sep{width:1px;background:var(--ut-line-strong);}
+.eb .title{font-weight:500;color:var(--ut-text-soft);letter-spacing:-0.005em;}
+.eb-card{font-size:18px;}
+.eb-card .num{font-size:18px;}
+.eb-card .sep{height:16px;}
+</style></head><body>
+<div class="card-label">Meta · Eyebrow / Caption / Code</div>
+
+<div class="spec-row" style="align-items:center;">
+  <div class="spec-meta">eyebrow<br/>20 · mono+sans</div>
+  <div class="spec-sample">
+    <div class="eb eb-card">
+      <span class="num">03</span>
+      <span class="sep"></span>
+      <span class="title">RAG의 기본 구조</span>
+    </div>
+  </div>
+</div>
+
+<div class="spec-row" style="align-items:flex-start;">
+  <div class="spec-meta">caption<br/>22 · 500</div>
+  <div class="spec-sample" style="display:flex;flex-direction:column;gap:8px;">
+    <div style="font-size:16px;font-weight:500;color:var(--ut-text-muted);">Copyright © 2026 uture(유쳐) by 아이솔. All rights reserved.</div>
+    <div style="font-size:16px;font-weight:500;color:var(--ut-text-muted);">14 / 36</div>
+  </div>
+</div>
+
+<div class="spec-row" style="align-items:center;">
+  <div class="spec-meta">code<br/>26 · 500</div>
+  <div class="spec-sample"><span style="font-family:var(--font-mono);font-size:18px;background:var(--ut-surface-2);padding:5px 12px;border-radius:6px;">[0.12, -0.45, 0.83, 0.07, …]</span></div>
+</div>
+
+</body></html>

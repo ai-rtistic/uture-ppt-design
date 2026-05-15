@@ -1,0 +1,21 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"/><link rel="stylesheet" href="../colors_and_type.css"/><style>
+html,body{background:var(--ut-canvas);margin:0;}
+body{width:700px;height:380px;box-sizing:border-box;padding:32px 40px;font-family:var(--font-sans);color:var(--ut-ink);display:flex;flex-direction:column;}
+.card-label{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--ut-text-muted);margin-bottom:18px;}
+</style></head><body>
+<div class="card-label">Callout · 인용 · 주의 · 좋은 예</div>
+<div style="display:flex;flex-direction:column;gap:18px;">
+  <div style="border-left:6px solid var(--ut-accent);padding:6px 0 6px 22px;">
+    <div style="font-size:20px;font-weight:500;letter-spacing:-0.01em;line-height:1.45;color:var(--ut-ink);">좋은 청크 = 의미 단위로 끊긴 한 덩어리</div>
+    <div style="font-size:13px;color:var(--ut-text-muted);margin-top:6px;">UTURE · RAG 입문 8장</div>
+  </div>
+  <div style="border-left:6px solid var(--ut-bad);padding:6px 0 6px 22px;">
+    <div style="font-size:20px;font-weight:500;letter-spacing:-0.01em;line-height:1.45;color:var(--ut-ink);">길이 기준으로만 자르면 문맥이 두 청크에 걸친다</div>
+    <div style="font-size:13px;color:var(--ut-text-muted);margin-top:6px;">주의 · Anti-pattern</div>
+  </div>
+  <div style="border-left:6px solid var(--ut-good);padding:6px 0 6px 22px;">
+    <div style="font-size:20px;font-weight:500;letter-spacing:-0.01em;line-height:1.45;color:var(--ut-ink);">의미 단락 + 50자 오버랩이 기본기</div>
+    <div style="font-size:13px;color:var(--ut-text-muted);margin-top:6px;">권장 · Recommended</div>
+  </div>
+</div>
+</body></html>
