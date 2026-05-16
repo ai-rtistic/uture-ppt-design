@@ -87,6 +87,23 @@ html, body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   margin: 0;
+
+  /* Korean line-breaking — break only at 어절(word) boundaries, not mid-word.
+     Browser default (`word-break: normal`) splits CJK anywhere, producing
+     awkward breaks like "달라진|다." `keep-all` keeps Hangul eojeol intact;
+     `overflow-wrap: anywhere` is the safety net so unbreakable long strings
+     (URLs, JetBrains Mono identifiers) can still wrap rather than overflow. */
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  line-break: strict;
+}
+
+/* Mono code / model names / numbers stay on a single token —
+   `keep-all` is right for Korean prose, but inside code the default
+   `break-all` fallback for overly long tokens is preferred. */
+code, kbd, samp, pre, .t-code {
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* ── Type scale utility classes (1920×1080 baseline) ──────────── */

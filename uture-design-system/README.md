@@ -121,6 +121,7 @@ UTURE 카피는 "강의 노트"의 톤이다. 친근한 영상 멘트·블로그
 - **스케일:** display 112 / title-1 72 / title-2 56 / title-3 40 / lead 36 / body 30 / body-sm 26 / caption 22 / eyebrow 20 / code 26. 교육 가독성을 위해 본문·캐프션 티어는 +8px.
 - **정렬:** 좌측 정렬이 기본. 표지·섹션 디바이더 외에는 가운데 정렬 금지.
 - **본문 최대 폭:** 캔버스의 70% (1920 기준 약 1340px).
+- **줄바꿈 (한국어 어절 보존):** 모든 슬라이드는 `word-break: keep-all; overflow-wrap: anywhere; line-break: strict` 를 따른다. 이 설정은 `colors_and_type.css` 의 `html, body` 베이스에 이미 들어 있으므로, 새 슬라이드를 만들 때 텍스트 컨테이너에 별도로 `word-break` 를 설정하지 않는다. 어절 가운데가 잘리는 줄바꿈(예: `달라진|다.`)이 발견되면 해당 컨테이너의 `width`/`max-width` 가 너무 좁아 `overflow-wrap` 폴백이 발동된 것이다 — 컨테이너 폭을 늘리거나 줄 위치를 `<br/>` 로 명시한다. 인쇄 PDF 엔진은 화면과 줄바꿈 결과가 다를 수 있으므로 화면·인쇄 양쪽에서 어절 보존을 함께 확인한다.
 
 ### 간격 (Spacing · 8pt)
 
