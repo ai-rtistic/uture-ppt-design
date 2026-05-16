@@ -85,7 +85,8 @@
   <!-- 02 Section Divider -->
   <section class="dark" data-screen-label="02 Section Divider">
     <img src="../assets/uture_logo.png" style="position:absolute;top:96px;right:120px;width:64px;height:64px;object-fit:contain;filter:invert(1);" alt="UTURE 브랜드 마크"/>
-    <div style="position:absolute;left:120px;top:50%;transform:translateY(-50%);">
+    <!-- 인쇄 안전 패턴 A: 고정 top. README § 5 Print-safe positioning 참고. -->
+    <div style="position:absolute;left:120px;top:200px;right:120px;">
       <div style="font-size:36px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:48px;">Section</div>
       <div style="font-size:280px;font-weight:700;letter-spacing:-0.04em;line-height:0.95;color:#fff;">03</div>
       <div style="font-size:72px;font-weight:700;letter-spacing:-0.025em;color:rgba(255,255,255,0.7);margin-top:24px;">RAG의 기본 구조</div>
@@ -97,8 +98,9 @@
   <!-- 03 Statement -->
   <section data-screen-label="03 Statement">
     <div class="eyebrow"><span class="num">03</span><span class="sep"></span><span class="title">RAG의 기본 구조</span></div>
-    <div style="position:absolute;left:120px;top:50%;transform:translateY(-50%);max-width:1440px;">
-      <div style="font-size:120px;font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:var(--ut-ink-strong);">
+    <!-- 인쇄 안전 패턴 B: flex 중앙 정렬. README § 5 Print-safe positioning 참고. -->
+    <div style="position:absolute;left:120px;right:120px;top:96px;bottom:96px;display:flex;align-items:center;">
+      <div style="font-size:120px;font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:var(--ut-ink-strong);max-width:1440px;">
         RAG는 정말<br/><span style="color:var(--ut-accent);">죽었는가</span>
       </div>
     </div>

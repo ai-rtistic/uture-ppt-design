@@ -218,6 +218,45 @@ UTURE는 **두 개의 마크**를 운용한다. 둘 다 단색·고정 비율이
     - **표지 / 섹션 / Statement / Closing** — 좌측 `Copyright © 2026 uture(유쳐) by 아이솔. All rights reserved.` + 우측 `14 / 36` 전체 표기
     - **본문 페이지 (Concept, Comparison, Flow, Step, Definition, Matrix 등)** — 우하단 작은 `14 / 36` 번호만, 슬라이드 구말에 붙여서. 본문과 겹치지 않도록 콘텐츠는 그 위로.
 
+### 인쇄 안전 (Print-safe positioning)
+
+`deck-stage`의 `@media print`는 모든 슬라이드를 `position: relative; width/height: 1920×1080; overflow: hidden`으로 강제한다. 이 환경에서 일부 브라우저 PDF 엔진(특히 Chromium의 Save as PDF)이 `transform: translateY(-50%)`를 빗나가게 계산해, **수직 중앙 정렬된 콘텐츠 블록이 페이지 영역 밖(푸터 아래)으로 흘러나가는 버그**가 발생한다. 화면 모드에서는 deck-stage가 `transform: scale`로 letterbox 처리하므로 잘 보이고, PDF로 저장할 때만 깨진다 — 시각 검증 캡처에 잡히지 않으므로 더 위험하다.
+
+**금지 패턴**
+
+```css
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+```
+
+Section Divider, Statement, Closing 등 "중앙에 큰 타이포 한 덩어리" 슬라이드에서 특히 흔한 함정.
+
+**권장 패턴 A — 고정 top (가장 단순)**
+
+```css
+position: absolute;
+top: 200px;     /* 콘텐츠 길이에 맞춰 200~340 사이 */
+left: 120px;
+right: 120px;
+```
+
+콘텐츠 높이가 예측 가능하면 이 방식을 우선. Section Divider · Statement · Closing은 모두 이 방식.
+
+**권장 패턴 B — flex 중앙 정렬 (가변 콘텐츠)**
+
+```css
+position: absolute;
+top: 96px; bottom: 96px;
+left: 120px; right: 120px;
+display: flex;
+align-items: center;
+```
+
+콘텐츠가 가변일 때. transform 없이 안전 영역(상하 96 · 좌우 120) 안에서 수직 중앙 정렬되며, PDF 엔진과 충돌하지 않는다.
+
+**검증법.** 작업이 끝나면 반드시 Chrome → File → Print → "Save as PDF"로 한 번 출력해 본다. 또는 Playwright에서 `page.emulate_media(media="print")` + `screenshot`으로 인쇄 모드를 흉내 내 캡처한다 (일반 캡처는 화면 모드라 이 버그를 잡지 못한다). 콘텐츠가 푸터를 침범하거나 잘리면 transform 사용을 의심.
+
 ### 비유 & 시각 장치 선택법 (Visual Playbook)
 
 본문 슬라이드는 **콘텐츠 유형 → 시각 장치**의 매핑을 따른다. 텍스트만 떠 있는 슬라이드는 만들지 않는다. 아래 표에서 가장 가까운 유형을 골라 그 장치를 동반시킨다.

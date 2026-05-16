@@ -39,6 +39,7 @@ Read `README.md` in this folder first. It defines:
 8. **Cover slide carries the team name only.** 강사 표기가 필요하면 정확히 `uture | 유쳐 교육팀`으로 적는다 (`UTURE 교육팀` 등 다른 표기 금지). **분량 표시("30분", "60분 분량" 등)는 표지·본문 어디에도 넣지 않는다.** 날짜·청중·분량 같은 로지스틱스 정보는 스피커 노트나 별도 페이지로 분리한다.
 9. **워드마크(`uture_text_logo`)는 데크 전체에서 표지 1회만 사용한다.** 섹션 디바이더·클로징·본문 어디에도 워드마크를 두지 않는다. 브랜드 위치가 필요한 슬라이드는 그래픽 마크 단독으로 처리한다.
 10. **Korean prose:** noun-form endings (`~한다`, `~된다`), no 여러분/저는, no exclamation marks, no marketing adjectives. See `README.md` § Content Fundamentals.
+11. **Print-safe positioning.** 슬라이드 컨테이너를 `top: 50%; transform: translateY(-50%)`로 수직 중앙 정렬하지 않는다. `deck-stage`의 `@media print` 모드에서 일부 브라우저 PDF 엔진이 transform-Y를 빗나가게 계산해 콘텐츠가 푸터 아래로 흘러나간다. 고정 `top` 값(예: `top: 200px`) 또는 `top:96px;bottom:96px;display:flex;align-items:center` 패턴을 쓴다. 자세한 패턴은 `README.md` § 5.X Print-safe positioning.
 
 ## If the user asks for something visual without telling you what
 
